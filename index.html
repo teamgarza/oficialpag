@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BOXING TEAM GARZA</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Oswald:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Oswald', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Contenedor principal centrado */
+        .main-wrapper {
+            width: 100%;
+            max-width: 480px;
+            background: linear-gradient(180deg, #0a0000 0%, #000000 100%);
+            min-height: 100vh;
+            border-left: 3px solid #ff0000;
+            border-right: 3px solid #ff0000;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(180deg, #1a0000 0%, #0a0000 100%);
+            padding: 25px 15px;
+            text-align: center;
+            border-bottom: 4px solid #ff0000;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .boxing-icon {
+            font-size: 35px;
+            filter: drop-shadow(0 0 10px #ff0000);
+        }
+
+        h1 {
+            font-family: 'Black Ops One', cursive;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ff0000;
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+            line-height: 1.2;
+        }
+
+        /* Navegación estática simple */
+        nav {
+            background: #0a0000;
+            padding: 15px 10px;
+            border-bottom: 2px solid #ff0000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            border: 1px solid #ff0000;
+            background: rgba(255, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(180deg, #000000 0%, #1a0000 50%, #000000 100%);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-family: 'Black Ops One', cursive;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: #ffcccc;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .price-tag {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            color: #ffffff;
+            padding: 20px 30px;
+            font-size: 2rem;
+            font-weight: bold;
+            border-radius: 10px;
+            border: 3px solid #ffffff;
+            display: inline-block;
+            font-family: 'Black Ops One', cursive;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
+        }
+
+        .price-tag span {
+            font-size: 0.9rem;
+            display: block;
+            font-weight: normal;
+            margin-top: 5px;
+            color: #ffff00;
+        }
+
+        /* Secciones */
+        section {
+            padding: 35px 15px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Black Ops One', cursive;
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            color: #ff0000;
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #ff0000;
+            margin: 15px auto 0;
+        }
+
+        /* Servicios */
+        .services-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .service-card {
+            background: linear-gradient(145deg, #1a0000, #0d0000);
+            border: 2px solid #ff0000;
+            padding: 25px 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .service-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 10px #ff0000);
+        }
+
+        .service-card h3 {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            font-family: 'Black Ops One', cursive;
+            color: #ff0000;
+        }
+
+        .service-card p {
+            color: #cccccc;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Horarios */
+        .schedule {
+            background: #0a0000;
+            border-top: 2px solid #ff0000;
+            border-bottom: 2px solid #ff0000;
+        }
+
+        .schedule-container {
+            background: #000000;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid #ff0000;
+        }
+
+        .schedule-header {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: 'Black Ops One', cursive;
+        }
+
+        .schedule-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 20px;
+            border-bottom: 1px solid #1a0000;
+            background: #050505;
+        }
+
+        .schedule-row:last-child {
+            border-bottom: none;
+        }
+
+        .day {
+            font-weight: bold;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .day::before {
+            content: '•';
+            color: #ff0000;
+            font-size: 1.5rem;
+        }
+
+        .time {
+            color: #ffff00;
+            font-weight: bold;
+            font-size: 0.9rem;
+            background: rgba(255, 0, 0, 0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: 1px solid #ff0000;
+        }
+
+        .weekend-note {
+            text-align: center;
+            margin-top: 20px;
+            color: #ff6666;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Contacto */
+        .contact-section {
+            text-align: center;
+            background: linear-gradient(180deg, #000000 0%, #1a0000 100%);
+        }
+
+        .contact-box {
+            background: rgba(10, 0, 0, 0.8);
+            padding: 30px 20px;
+            border-radius: 15px;
+            border: 2px solid #ff0000;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+        }
+
+        .contact-intro {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: #ffcccc;
+            text-transform: uppercase;
+        }
+
+        .phone-number {
+            font-size: 2.2rem;
+            color: #ffffff;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+            font-family: 'Black Ops One', cursive;
+            letter-spacing: 2px;
+        }
+
+        .cta-text {
+            color: #ffff00;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            color: #ffffff;
+            padding: 18px 35px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid #ffffff;
+            font-family: 'Black Ops One', cursive;
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000;
+            text-align: center;
+            padding: 25px 15px;
+            border-top: 3px solid #ff0000;
+        }
+
+        .logo-footer {
+            color: #ff0000;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-family: 'Black Ops One', cursive;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+        }
+
+        footer p {
+            color: #666;
+            font-size: 0.8rem;
+            margin: 5px 0;
+        }
+
+        .footer-slogan {
+            color: #ff0000;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        /* Ajustes específicos para pantallas muy pequeñas */
+        @media (max-width: 360px) {
+            h1 { font-size: 1.5rem; }
+            .hero h2 { font-size: 1.7rem; }
+            .price-tag { font-size: 1.6rem; padding: 15px 25px; }
+            .phone-number { font-size: 1.8rem; }
+            nav a { font-size: 0.7rem; padding: 6px 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-wrapper">
+
+        <header>
+            <div class="logo-section">
+                <div class="boxing-icon">🥊</div>
+                <h1>BOXING<br>TEAM GARZA</h1>
+                <div class="boxing-icon">🥊</div>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#inicio">INICIO</a></li>
+                <li><a href="#servicios">SERVICIOS</a></li>
+                <li><a href="#horarios">HORARIOS</a></li>
+                <li><a href="#contacto">CONTACTO</a></li>
+            </ul>
+        </nav>
+
+        <section class="hero" id="inicio">
+            <h2>ENTRENA COMO<br>UN CAMPEÓN</h2>
+            <p>EL MEJOR GIMNASIO<br>DE BOXEO</p>
+            <div class="price-tag">
+                $100 MXN
+                <span>¡POR SEMANA!</span>
+            </div>
+        </section>
+
+        <section id="servicios">
+            <h2 class="section-title">NUESTROS SERVICIOS</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🥊</div>
+                    <h3>BOXEO RECREATIVO</h3>
+                    <p>Diviértete mientras te pones en forma. Aprende los fundamentos del boxeo con entrenamientos dinámicos.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏆</div>
+                    <h3>BOXEO COMPETITIVO</h3>
+                    <p>Preparación profesional para peleadores. Lleva tus habilidades al siguiente nivel y conquista el ring.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💪</div>
+                    <h3>ENTRENAMIENTO FÍSICO</h3>
+                    <p>Condicionamiento extremo. Mejora tu resistencia, fuerza y velocidad con rutinas intensas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="schedule" id="horarios">
+            <h2 class="section-title">HORARIOS</h2>
+            <div class="schedule-container">
+                <div class="schedule-header">
+                    LUNES A VIERNES
+                </div>
+                <div class="schedule-row">
+                    <span class="day">Lunes</span>
+                    <span class="time">6:00 - 9:00 PM</span>
+                </div>
+                <div class="schedule-row">
+                    <span class="day">Martes</span>
+                    <span class="time">6:00 - 9:00 PM</span>
+                </div>
+                <div class="schedule-row">
+                    <span class="day">Miércoles</span>
+                    <span class="time">6:00 - 9:00 PM</span>
+                </div>
+                <div class="schedule-row">
+                    <span class="day">Jueves</span>
+                    <span class="time">6:00 - 9:00 PM</span>
+                </div>
+                <div class="schedule-row">
+                    <span class="day">Viernes</span>
+                    <span class="time">6:00 - 9:00 PM</span>
+                </div>
+            </div>
+            <p class="weekend-note">Fines de semana cerrado</p>
+        </section>
+
+        <section class="contact-section" id="contacto">
+            <h2 class="section-title">¡ÚNETE!</h2>
+            <div class="contact-box">
+                <p class="contact-intro">CONTÁCTANOS AHORA</p>
+                <div class="phone-number">656 132 2091</div>
+                <p class="cta-text">¡TU PRIMERA CLASE PUEDE SER HOY!</p>
+                <a href="https://wa.me/526561322091" class="cta-button">
+                    WHATSAPP
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <div class="logo-footer">BOXING TEAM GARZA</div>
+            <p>© 2024 Todos los derechos reservados</p>
+            <p class="footer-slogan">ENTRENA CON PASIÓN</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
